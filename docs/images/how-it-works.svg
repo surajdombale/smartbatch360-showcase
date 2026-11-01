@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="672" viewBox="0 0 1200 672">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#14213D"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#1E2A44" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#8FA3BF"/>
+    </marker>
+    <style>
+      .sans { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: 'JetBrains Mono', Consolas, 'Courier New', monospace; }
+      @keyframes flow { to { stroke-dashoffset: -24 } }
+      @keyframes pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }
+      .wire { stroke-dasharray: 6 6; animation: flow 1.2s linear infinite; }
+      .dot { animation: pulse 2.4s ease-in-out infinite; }
+      .card { fill: #0F1A2E; stroke-width: 2; }
+      .title { font-size: 19px; font-weight: 700; }
+      .body { font-size: 14px; fill: #C9D6E8; }
+      .small { font-size: 12px; fill: #8FA3BF; }
+      .num { font-size: 15px; font-weight: 700; fill: #0B1220; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="672" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="672" rx="16" fill="url(#grid)" opacity=".6"/>
+
+  <!-- ===== Part 1: what it does (plain words) ===== -->
+  <text x="48" y="54" class="sans" font-size="14" fill="#8FA3BF" letter-spacing="3">WHAT IT DOES</text>
+  <text x="48" y="84" class="sans" font-size="24" font-weight="700" fill="#FFFFFF">From a customer order to a printed batch report</text>
+
+  <!-- Step 1: Plan -->
+  <g class="sans">
+    <rect x="48" y="112" width="250" height="150" rx="12" class="card" stroke="#61DAFB"/>
+    <circle cx="80" cy="144" r="16" fill="#61DAFB"/>
+    <text x="80" y="149" text-anchor="middle" class="num">1</text>
+    <text x="106" y="150" class="title" fill="#61DAFB">Plan</text>
+    <text x="68" y="186" class="body">Create an order for a client</text>
+    <text x="68" y="208" class="body">and site, and pick the</text>
+    <text x="68" y="230" class="body">concrete recipe and quantity.</text>
+  </g>
+
+  <!-- Step 2: Produce -->
+  <g class="sans">
+    <rect x="334" y="112" width="250" height="150" rx="12" class="card" stroke="#6DB33F"/>
+    <circle cx="366" cy="144" r="16" fill="#6DB33F"/>
+    <text x="366" y="149" text-anchor="middle" class="num">2</text>
+    <text x="392" y="150" class="title" fill="#6DB33F">Produce</text>
+    <text x="354" y="186" class="body">Run the batch. Each mixing</text>
+    <text x="354" y="208" class="body">cycle records what every</text>
+    <text x="354" y="230" class="body">material actually weighed.</text>
+  </g>
+
+  <!-- Step 3: Store -->
+  <g class="sans">
+    <rect x="620" y="112" width="250" height="150" rx="12" class="card" stroke="#F89820"/>
+    <circle cx="652" cy="144" r="16" fill="#F89820"/>
+    <text x="652" y="149" text-anchor="middle" class="num">3</text>
+    <text x="678" y="150" class="title" fill="#F89820">Track</text>
+    <text x="640" y="186" class="body">Orders update on their own:</text>
+    <text x="640" y="208" class="body">produced vs remaining, and</text>
+    <text x="640" y="230" class="body">material used vs target.</text>
+  </g>
+
+  <!-- Step 4: Report -->
+  <g class="sans">
+    <rect x="906" y="112" width="250" height="150" rx="12" class="card" stroke="#A99CFF"/>
+    <circle cx="938" cy="144" r="16" fill="#A99CFF"/>
+    <text x="938" y="149" text-anchor="middle" class="num">4</text>
+    <text x="964" y="150" class="title" fill="#A99CFF">Report</text>
+    <text x="926" y="186" class="body">Export any batch as a PDF</text>
+    <text x="926" y="208" class="body">or Excel report, or print it</text>
+    <text x="926" y="230" class="body">for the plant or the client.</text>
+  </g>
+
+  <!-- Step arrows -->
+  <g fill="none" stroke="#8FA3BF" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="300" y1="187" x2="330" y2="187" class="wire"/>
+    <line x1="586" y1="187" x2="616" y2="187" class="wire"/>
+    <line x1="872" y1="187" x2="902" y2="187" class="wire"/>
+  </g>
+
+  <!-- Divider -->
+  <line x1="48" y1="300" x2="1152" y2="300" stroke="#1E2A44" stroke-width="2"/>
+
+  <!-- ===== Part 2: how it's built ===== -->
+  <text x="48" y="342" class="sans" font-size="14" fill="#8FA3BF" letter-spacing="3">HOW IT'S BUILT</text>
+
+  <g class="sans" text-anchor="middle">
+    <!-- JavaFX -->
+    <rect x="160" y="372" width="220" height="74" rx="10" class="card" stroke="#61DAFB"/>
+    <text x="270" y="404" class="title" font-size="16" fill="#61DAFB">Desktop App</text>
+    <text x="270" y="426" class="small">JavaFX screens</text>
+
+    <!-- Spring Boot -->
+    <rect x="490" y="372" width="220" height="74" rx="10" class="card" stroke="#6DB33F"/>
+    <text x="600" y="404" class="title" font-size="16" fill="#6DB33F">Spring Boot API</text>
+    <text x="600" y="426" class="small">business rules · REST</text>
+
+    <!-- MySQL -->
+    <rect x="820" y="372" width="220" height="74" rx="10" class="card" stroke="#F89820"/>
+    <text x="930" y="404" class="title" font-size="16" fill="#F89820">MySQL</text>
+    <text x="930" y="426" class="small">schema by Flyway</text>
+
+    <!-- PLC -->
+    <rect x="490" y="500" width="220" height="74" rx="10" class="card" stroke="#4CAF50" stroke-dasharray="6 4"/>
+    <text x="600" y="532" class="title" font-size="16" fill="#7CD67F">PLC</text>
+    <text x="600" y="554" class="small">via OPC UA · in progress</text>
+  </g>
+
+  <!-- Wires -->
+  <g fill="none" stroke-width="2">
+    <line x1="382" y1="409" x2="486" y2="409" stroke="#61DAFB" class="wire"/>
+    <line x1="712" y1="409" x2="816" y2="409" stroke="#6DB33F" class="wire"/>
+    <line x1="600" y1="498" x2="600" y2="450" stroke="#4CAF50" class="wire"/>
+  </g>
+  <g fill="#8FA3BF" class="sans" font-size="12" text-anchor="middle">
+    <text x="434" y="397">HTTP / JSON</text>
+    <text x="764" y="397">JPA</text>
+    <text x="612" y="478" text-anchor="start">mixing cycles</text>
+  </g>
+  <g fill="#4CAF50">
+    <circle cx="434" cy="409" r="4" class="dot"/>
+    <circle cx="764" cy="409" r="4" class="dot" style="animation-delay:.8s"/>
+    <circle cx="600" cy="474" r="4" class="dot" style="animation-delay:1.6s"/>
+  </g>
+
+  <text x="600" y="616" text-anchor="middle" class="sans body">The desktop app and its backend ship together as one Windows .exe with its own Java runtime.</text>
+  <text x="600" y="640" text-anchor="middle" class="sans body">The PLC will send each mixing cycle to the same API the Production screen uses today.</text>
+</svg>
